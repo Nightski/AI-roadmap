@@ -6,9 +6,13 @@ def mult(a, b):
     print(a * b)
 def div(a, b):
     print(a / b)
-
-a = int(input("Enter first oprand: "))
-b = int(input("Enter second oparand: "))
+while True:
+    try:
+        a = int(input("Enter first oprand: "))
+        b = int(input("Enter second oparand: "))
+        break
+    except ValueError:
+        print("Please Enter a valid integer")
 
 m = input("Enter your operation +, -, /, *  : ")
 
