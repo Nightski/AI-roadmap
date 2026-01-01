@@ -26,7 +26,9 @@ while True:
         continue
 
     m = input("Enter your operation +, -, /, *  : ")
-
+    if m not in operations:
+        print("Enter a valid operation...")
+        continue
     result = operations[m](a,b)
     print(result)
     sign = input("Enter q to quit or c to continue: ")
