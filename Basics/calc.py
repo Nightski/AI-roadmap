@@ -29,3 +29,6 @@ while True:
 
     result = operations[m](a,b)
     print(result)
+    sign = input("Enter q to quit or c to continue: ")
+    if sign == 'q':
+        break
