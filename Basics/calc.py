@@ -6,8 +6,7 @@ def mult(a, b):
     return a * b
 def div(a, b):
     if b == 0:
-        print("Can't divide by zero...")
-        return
+        return "Can't divide by zero..."
     return a / b
 
 operations = {
