@@ -19,3 +19,14 @@ print("Class Average")
 print("Science: ",sc/5)
 print("English: ",eng/5)
 print("Maths: ",mt/5)
+
+me = max(i["English"] for i in info)
+ms = max(i["science"] for i in info)
+mm = max(i["Maths"] for i in info)
+
+print()
+print("Maximum marks:")
+print("Science: ",ms)
+print("Maths: ",mm)
+print("English: ",me)
+
