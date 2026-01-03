@@ -5,3 +5,6 @@ info = [{"name" : "Krish", "English" : 89, "Maths" : 99, "science" : 88},
         {"name" : "Tushar", "English" : 64, "Maths" : 89, "science" : 85},
         ]
 
+for i in info:
+    avg = (i["English"] + i["Maths"] + i["science"]) / 3
+    print(i["name"] + " " , avg)
