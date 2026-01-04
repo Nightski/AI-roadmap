@@ -11,3 +11,8 @@ dead = df['Survived'].value_counts()
 
 #chance of surviving based on sex
 grp = df.groupby('Sex')['Survived'].mean() * 100
+
+#cleaning null data
+print(df.isnull().sum())
+df = df.drop(columns=['Cabin'])
+print(df.isnull().sum())
