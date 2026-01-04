@@ -17,3 +17,9 @@ print(df.isnull().sum())
 df = df.drop(columns=['Cabin'])
 df['Age'] = df['Age'].fillna(df['Age'].median())
 df['Embarked'] = df['Embarked'].fillna(df['Embarked'].mode()[0])
+
+#features
+df['Family size'] = df['SibSp'] + df['Parch']
+df['Alone'] = (df['Family size'] == 1).astype(int)
+
+print(df.info)
