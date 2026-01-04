@@ -15,4 +15,5 @@ grp = df.groupby('Sex')['Survived'].mean() * 100
 #cleaning null data
 print(df.isnull().sum())
 df = df.drop(columns=['Cabin'])
-print(df.isnull().sum())
+df['Age'] = df['Age'].fillna(df['Age'].median())
+df['Embarked'] = df['Embarked'].fillna(df['Embarked'].mode()[0])
