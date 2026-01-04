@@ -6,5 +6,8 @@ change = {"male" : 1, "female" : 0}
 
 df['Sex'] = df['Sex'].replace(change).infer_objects(copy=False)
 
+#how many dead count
 dead = df['Survived'].value_counts()
-print(dead)
+
+#chance of surviving based on sex
+grp = df.groupby('Sex')['Survived'].mean() * 100
