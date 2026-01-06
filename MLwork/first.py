@@ -35,3 +35,14 @@ print(classification_report(ytest, ypred))
 
 tree_pred = tree.predict(xtest)
 print("ACC of tree: ",accuracy_score(ytest,tree_pred) * 100)
+
+#which one was better
+comparison = pd.DataFrame({
+    "Model": ["Logistic Regression", "Decision Tree"],
+    "Accuracy": [
+        accuracy_score(ytest, ypred) * 100,
+        accuracy_score(ytest, tree_pred) * 100
+    ]
+})
+
+print(comparison)
