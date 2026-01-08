@@ -1,7 +1,7 @@
 import pandas as pd
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeRegressor
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import mean_absolute_error, r2_score
 pd.set_option('future.no_silent_downcasting', True)
 
 df = pd.read_csv(r"C:\Users\kevin vinsent\Downloads\house_prices.csv")
@@ -21,7 +21,8 @@ df['floors'] = df['floors'].astype(int)
 x = df[features]
 y = df['price']
 xtrain, xtest, ytrain, ytest = train_test_split(x,y,test_size=0.2,random_state=42)
-model = DecisionTreeClassifier(max_depth=3,random_state=42)
+model = DecisionTreeRegressor(max_depth=5,random_state=42)
 model.fit(xtrain, ytrain)
 ypred = model.predict(xtest)
-print(accuracy_score(ytest, ypred) * 100)
+print("R2", r2_score(ytest, ypred))
+print("MAE",mean_absolute_error(ytest, ypred))
