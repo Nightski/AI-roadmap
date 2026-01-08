@@ -6,6 +6,11 @@ pd.set_option('future.no_silent_downcasting', True)
 
 df = pd.read_csv(r"C:\Users\kevin vinsent\Downloads\house_prices.csv")
 df['date'] = pd.to_datetime(df['date'],format="%Y%m%dT%H%M%S").dt.normalize()
+df['was_renovated'] = (df['yr_renovated'] != 0).astype(int)
+df['reno_age'] = 0
+df.loc[df['yr_renovated'] != 0, 'reno_age'] = (
+    df['date'].dt.year - df['yr_renovated']
+)
 
 features = [
     'bedrooms',
