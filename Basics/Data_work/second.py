@@ -14,4 +14,4 @@ features = [
 df['waterfront'] = df['waterfront'].replace({"N":0, "Y":1}).infer_objects(copy=False).astype(int)
 print(df['condition'].unique())
 cond = {'Average': 2 ,'Very Good' : 4, 'Good' : 3, 'Poor': 0, 'Fair' : 1}
-df['condition'] = df['condition'].replace(cond).astype(int)
+df['condition'] = df['condition'].replace(cond).infer_objects(copy=False).astype(int)
