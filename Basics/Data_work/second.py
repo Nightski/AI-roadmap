@@ -47,7 +47,8 @@ xtrain, xtest, ytrain, ytest = train_test_split(x,y,test_size=0.2,random_state=4
 model = RandomForestRegressor(n_estimators=300,
                               max_depth=10,
                               min_samples_leaf=20,
-                              random_state=42)
+                              random_state=42,
+                              n_jobs=-1)
 model.fit(xtrain, ytrain)
 ypred = model.predict(xtest)
 print("R2", r2_score(ytest, ypred))
