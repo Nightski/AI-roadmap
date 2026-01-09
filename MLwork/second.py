@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, r2_score
 pd.set_option('future.no_silent_downcasting', True)
 
-df = pd.read_csv(r"C:\Users\kevin vinsent\Downloads\house_prices.csv")
+df = pd.read_csv(r"C:\Users\kevin vinsent\Desktop\kevin\AI-roadmap\MLwork\house_prices.csv")
 df['date'] = pd.to_datetime(df['date'],format="%Y%m%dT%H%M%S").dt.normalize()
 
 df['was_renovated'] = (df['yr_renovated'] != 0).astype(int)
