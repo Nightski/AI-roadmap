@@ -1,3 +1,4 @@
+#functins that helped do calculation
 def add(a, b):
     return a + b
 def sub(a, b):
@@ -16,6 +17,7 @@ operations = {
     '/': div
 }
 
+#the logic
 while True:
     try:
         a = int(input("Enter first oprand: "))
